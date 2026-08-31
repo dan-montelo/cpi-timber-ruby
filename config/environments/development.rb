@@ -122,7 +122,7 @@ Rails.application.configure do
   end
 
   # This header namespace will be used when sending webhook events.
-  config.outgoing_webhooks[:webhook_headers_namespace] = "X-Webhook-Untitled-Application"
+  config.outgoing_webhooks[:webhook_headers_namespace] = "X-Webhook-Cpi-Timber-Ruby"
 
   # Automatic endpoint deactivation for outgoing webhooks. This feature is disabled by default.
   # If you want to enable it, set the following configuration option to true.

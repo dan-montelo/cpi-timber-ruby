@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-docker container rm untitled_application_dev
-docker image rm untitled_application_dev
+docker container rm cpi_timber_ruby_dev
+docker image rm cpi_timber_ruby_dev
