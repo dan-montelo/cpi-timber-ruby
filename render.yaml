@@ -5,14 +5,14 @@ databases:
     plan: basic-1gb
 
 services:
-  - type: redis
+  - type: keyvalue
     name: redis
     ipAllowList: []
-    plan: starter
+    plan: 256mb
     maxmemoryPolicy: noeviction
   - type: web
     name: web
-    env: ruby
+    runtime: ruby
     buildCommand: "RUN_MIGRATIONS=1 ./bin/render-build.sh"
     startCommand: "corepack enable && bundle exec puma -C config/puma.rb"
     envVars:
@@ -28,7 +28,7 @@ services:
       - fromGroup: settings
   - type: worker
     name: worker
-    env: ruby
+    runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "corepack enable && bundle exec sidekiq -t 25"
     envVars:
